@@ -8,9 +8,13 @@ class postIt {
     couleurTexte;
     titre;
     taille;
+    largeurZoneText;
+    hauteurZoneText;
+   
+
     
 
-    constructor(largeur,hauteur,x,y,couleurFond,couleurTexte,titre,taille,){
+    constructor(largeur,hauteur,x,y,couleurFond,couleurTexte,titre,taille,largeurZoneText,hauteurZoneText){
 
     this.y=y;
     this.x=x;
@@ -20,10 +24,15 @@ class postIt {
     this.couleurTexte=couleurTexte;
     this.titre=titre
     this.taille=taille
+    this.largeurZoneText=largeurZoneText
+    this.hauteurZoneText=hauteurZoneText
+    
     
 
     
     }
+
+    
 
     affichePostit(){
 
@@ -43,6 +52,18 @@ class postIt {
     monTitre.innerHTML=this.titre
     blocPostit.appendChild(monTitre)
 
+
+    let monText=document.createElement('textarea')
+    
+    monText.style.width=this.largeurZoneText+'%';
+    monText.style.height=this.hauteurZoneText+'%';
+    monText.style.backgroundColor=this.couleurFond;
+    
+
+    blocPostit.appendChild(monText)
+
+
+    
     document.getElementById('post-it').appendChild(blocPostit)
     
     }

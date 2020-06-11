@@ -2,4 +2,11 @@
     min-height:920px;
     width: 100%;
     text-align: center;
+   
+}
+
+
+#post>*{
+    border: none;
+    resize: none;
 }
