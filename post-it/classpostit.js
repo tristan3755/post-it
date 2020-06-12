@@ -49,7 +49,7 @@ class postIt {
     blocPostit.style.height=this.hauteur+"px";
     blocPostit.style.left=this.x+"px";
     blocPostit.style.top=this.y+"px";
-    blocPostit.style.position="fixed";
+    blocPostit.style.position="absolute";
     blocPostit.style.backgroundColor=this.couleurFond;
     blocPostit.innerHTML=' '
     

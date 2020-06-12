@@ -1,18 +1,23 @@
 body{
 
-    margin: 0;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     
 }
 
-
-
+body, html {
+    min-height: 100%;
+      }
 
 #post-it{
     min-height:920px;
     width: 100%;
     text-align: center;
     background-image: url(./images/back1.jpg);
-    background-attachment: fixed;
+    
     background-position: left;
     
     
@@ -24,7 +29,7 @@ body{
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    height: 100vh;
+    min-height: 100vh;
     width: 20vw;
     background-color: black;
     opacity: 0.7;
@@ -35,8 +40,8 @@ body{
 
 .buttonOption{
 
-    height: 70px;
-    width: 70%;
+    min-height: 70px;
+    min-width: 70%;
     border-radius: 20px;
     font-size: 120%;
     background-color: darkred;
@@ -47,8 +52,8 @@ body{
 
 .buttonOption1{
 
-    height: 70px;
-    width: 70%;
+    min-height: 70px;
+    min-width: 70%;
     border-radius: 20px;
     font-size: 120%;
     background-color: darkgreen;
@@ -60,8 +65,8 @@ body{
 
 .buttonOption2{
 
-    height: 70px;
-    width: 70%;
+    min-height: 70px;
+    min-width: 70%;
     border-radius: 20px;
     font-size: 120%;
     background-color: darkgoldenrod;
@@ -74,8 +79,8 @@ body{
 
 .buttonOption3{
 
-    height: 70px;
-    width: 70%;
+    min-height: 70px;
+    min-width: 70%;
     border-radius: 20px;
     font-size: 120%;
     background-color: darkblue;
