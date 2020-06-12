@@ -1,12 +1,153 @@
+body{
+
+    margin: 0;
+    
+}
+
+
+
+
 #post-it{
     min-height:920px;
     width: 100%;
     text-align: center;
-   
+    background-image: url(./images/back1.jpg);
+    background-attachment: fixed;
+    background-position: left;
+    
+    
+}
+
+#option{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    height: 100vh;
+    width: 20vw;
+    background-color: black;
+    opacity: 0.7;
+    
+
+}
+
+
+.buttonOption{
+
+    height: 70px;
+    width: 70%;
+    border-radius: 20px;
+    font-size: 120%;
+    background-color: darkred;
+    color: whitesmoke;
+    margin: 30px;
+
+}
+
+.buttonOption1{
+
+    height: 70px;
+    width: 70%;
+    border-radius: 20px;
+    font-size: 120%;
+    background-color: darkgreen;
+    color: whitesmoke;
+    margin: 30px;
+
+}
+
+
+.buttonOption2{
+
+    height: 70px;
+    width: 70%;
+    border-radius: 20px;
+    font-size: 120%;
+    background-color: darkgoldenrod;
+    color: whitesmoke;
+    margin: 30px;
+
+
+}
+
+
+.buttonOption3{
+
+    height: 70px;
+    width: 70%;
+    border-radius: 20px;
+    font-size: 120%;
+    background-color: darkblue;
+    color: whitesmoke;
+    margin: 30px;
+
+}
+
+
+.buttonOption:hover{
+    background-color: black;
+    cursor: pointer;
+    
+}
+
+.buttonOption1:hover{
+    background-color: black;
+    cursor: pointer;
+    
+}
+.buttonOption2:hover{
+    background-color: black;
+    cursor: pointer;
+    
+}
+.buttonOption3:hover{
+    background-color: black;
+    cursor: pointer;
+    
+}
+
+#post{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 5px 10px black;
+    border-radius: 20px;
+    opacity: 0.8;
+    
 }
 
 
 #post>*{
     border: none;
     resize: none;
+    font-family:  'Sriracha', cursive;
 }
+
+.bouton{
+
+    justify-self: start;
+    align-self: flex-start;
+    background-color: white;
+    border-radius: 20px;
+    border: black 3px solid;
+    margin-right: 5px;
+}
+
+
+.bouton:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+.divB{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    min-height: 30px;
+
+}
+
