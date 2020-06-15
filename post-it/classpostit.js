@@ -11,6 +11,8 @@ class postIt {
     largeurZoneText;
     hauteurZoneText;
     contenu;
+    departX;
+    departY;
    
 
     
@@ -45,10 +47,11 @@ class postIt {
         blocPostit.addEventListener('click',()=>{
             
             bougePost=!bougePost
+            resizePost=false
            
         })
 
-    
+     
     }
     
     blocPostit.style.width=this.largeur+"px";
@@ -99,6 +102,17 @@ class postIt {
     maValue2.classList.add("fa-expand-arrows-alt")
     
     
+    monBoutonRedimension.addEventListener('click',(event)=>{
+            
+        this.departX=x
+       this.departY=y
+       resizePost=!resizePost
+        bougePost=false
+        console.log(this.departY+' '+this.departX)
+       event.stopPropagation()
+       
+    })
+
 
 
     let monBoutonEdition=document.createElement('button')
