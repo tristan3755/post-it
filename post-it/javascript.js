@@ -26,7 +26,7 @@ if(bougePost){
 
 if(resizePost){
 
-    monPostit.taillePostit(x-monPostit.departX,y-monPostit.departY)
+    monPostit.taillePostit(x/*-monPostit.departX*/,y/*-monPostit.departY*/)
     monPostit.affichePostit()
 
 }
