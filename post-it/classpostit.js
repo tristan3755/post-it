@@ -42,7 +42,13 @@ class postIt {
 
         blocPostit = document.createElement('div');
         blocPostit.id='post';
+        blocPostit.addEventListener('click',()=>{
+            
+            bougePost=!bougePost
+           
+        })
 
+    
     }
     
     blocPostit.style.width=this.largeur+"px";
@@ -133,6 +139,9 @@ class postIt {
         this.x = newX
         this.y =newY
 
+        
+
+
     }
 
     taillePostit(newLargeur,newHauteur){
@@ -147,7 +156,7 @@ class postIt {
 
     }
 
-
+   
 
 
 }

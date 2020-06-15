@@ -5,6 +5,10 @@ body{
     left: 0;
     right: 0;
     bottom: 0;
+    background-image: url(./images/back1.jpg);
+    
+    background-position: left;
+    
     
 }
 
@@ -13,13 +17,11 @@ body, html {
       }
 
 #post-it{
-    min-height:920px;
+    min-height:100vh;
     width: 100%;
     text-align: center;
-    background-image: url(./images/back1.jpg);
     
-    background-position: left;
-    
+ 
     
 }
 
@@ -33,8 +35,29 @@ body, html {
     width: 20vw;
     background-color: black;
     opacity: 0.7;
-    
+    animation: option 5s;
 
+}
+
+
+@keyframes option{
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity: 0.7;
+    }
+}
+
+@keyframes postit{
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity: 0.8;
+    }
 }
 
 
@@ -119,6 +142,7 @@ body, html {
     box-shadow: 5px 10px black;
     border-radius: 20px;
     opacity: 0.8;
+    animation: postit 5s;
     
 }
 
