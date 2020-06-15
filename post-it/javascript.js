@@ -1,8 +1,8 @@
 let bougePost=false
 
 let resizePost=false
-let x 
-let y
+var xPos 
+var yPos
 let monPostit = new postIt (275,200,575,100,'yellow','black','Faire L\'exo',25,90,50,'Notes')
 
 monPostit.affichePostit()
@@ -15,19 +15,20 @@ monPostit.modifContenu(monPostit.contenu +'- retrouver Marc au PMU -')
 
 document.body.addEventListener('mousemove',(event)=>{
 
-     x=event.clientX
-     y=event.clientY
+    xPos=event.clientX
+     yPos=event.clientY
 
-     console.log(y+' '+x)
+    
 if(bougePost){
-    monPostit.bougePostit(x-50,y-50)
+    monPostit.bougePostit(xPos-50,yPos-50)
     monPostit.affichePostit()
 }
 
 if(resizePost){
 
-    monPostit.taillePostit(x/*-monPostit.departX*/,y/*-monPostit.departY*/)
+    monPostit.taillePostit((+monPostit.largdep)+(+xPos-monPostit.departX),(+monPostit.hautdep)+(+yPos-monPostit.departY))
     monPostit.affichePostit()
+    console.log('y:'+yPos+' x:'+xPos+' depX:'+monPostit.departX+' depY:'+monPostit.departY)
 
 }
 

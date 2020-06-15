@@ -30,6 +30,8 @@ class postIt {
     this.largeurZoneText=largeurZoneText
     this.hauteurZoneText=hauteurZoneText
     this.contenu=contenu
+    this.departX=0
+    this.departY=0
     
     }
 
@@ -104,11 +106,13 @@ class postIt {
     
     monBoutonRedimension.addEventListener('click',(event)=>{
             
-        this.departX=x
-       this.departY=y
+        this.departX=xPos
+       this.departY=yPos
+       this.largdep=this.largeur
+       this.hautdep=this.hauteur
        resizePost=!resizePost
         bougePost=false
-        console.log(this.departY+' '+this.departX)
+        //console.log(x+' '+y)
        event.stopPropagation()
        
     })
