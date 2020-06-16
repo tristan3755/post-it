@@ -8,8 +8,7 @@ class postIt {
     couleurTexte;
     titre;
     taille;
-    largeurZoneText;
-    hauteurZoneText;
+    
     contenu;
     departX;
     departY;
@@ -17,7 +16,7 @@ class postIt {
 
     
 
-    constructor(largeur,hauteur,x,y,couleurFond,couleurTexte,titre,taille,largeurZoneText,hauteurZoneText,contenu){
+    constructor(largeur,hauteur,x,y,couleurFond,couleurTexte,titre,taille,contenu){
 
     this.y=y;
     this.x=x;
@@ -27,8 +26,7 @@ class postIt {
     this.couleurTexte=couleurTexte;
     this.titre=titre
     this.taille=taille
-    this.largeurZoneText=largeurZoneText
-    this.hauteurZoneText=hauteurZoneText
+    
     this.contenu=contenu
     this.departX=0
     this.departY=0
@@ -73,10 +71,8 @@ class postIt {
     blocPostit.appendChild(monTitre)
 
 
-    let monText=document.createElement('textarea')
+    let monText=document.createElement('p')
     monText.id='text';
-    monText.style.width=this.largeurZoneText+'%';
-    monText.style.height=this.hauteurZoneText+'%';
     monText.style.backgroundColor=this.couleurFond;
     monText.innerHTML = this.contenu;
     blocPostit.appendChild(monText)

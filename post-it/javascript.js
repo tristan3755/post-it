@@ -8,14 +8,12 @@ let modif=false
 
 var xPos 
 var yPos
-let monPostit = new postIt (275,200,575,100,'yellow','black','A ne pas oublier!',25,90,50,'Notes')
+
+
+let monPostit = new postIt (275,200,575,100,'yellow','black','A ne pas oublier!',25,'Notes')
 
 monPostit.affichePostit()
 
-
-monPostit.modifContenu('- trouver la gestion des addEventListener')
-monPostit.modifContenu(monPostit.contenu +'- faire virer julien -')
-monPostit.modifContenu(monPostit.contenu +'- retrouver Marc au PMU -')
 
 
 document.body.addEventListener('mousemove',(event)=>{
@@ -35,6 +33,20 @@ if(resizePost){
     monPostit.affichePostit()
     
 
+}
+
+
+
+})
+
+
+document.body.addEventListener('keypress',(event)=>{
+
+modifText=event.key
+
+if(modif){
+    monPostit.modifContenu(monPostit.contenu + modifText)
+    monPostit.affichePostit()
 }
 
 
