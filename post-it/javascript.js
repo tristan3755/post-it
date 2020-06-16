@@ -40,18 +40,26 @@ if(resizePost){
 })
 
 
-document.body.addEventListener('keypress',(event)=>{
+document.body.addEventListener('keydown',(event)=>{
 
 modifText=event.key
 
 if(modif){
-    monPostit.modifContenu(monPostit.contenu + modifText)
+   
+    //console.log(event.keyCode)
+
+if(event.key=='Backspace'){
     
+console.log(monPostit.contenu.substr(0,1))
 
-if(event.key=="Backspace"){
+monPostit.modifContenu(monPostit.contenu.substr(0,monPostit.contenu.length-1))
 
-String.length(monPostit.modifContenu(monPostit.contenu + modifText)-1)
 
+
+}
+
+else{
+    monPostit.modifContenu(monPostit.contenu + modifText)
 }
 
 monPostit.affichePostit()
