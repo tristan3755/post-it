@@ -46,7 +46,16 @@ modifText=event.key
 
 if(modif){
     monPostit.modifContenu(monPostit.contenu + modifText)
-    monPostit.affichePostit()
+    
+
+if(event.key=="Backspace"){
+
+String.length(monPostit.modifContenu(monPostit.contenu + modifText)-1)
+
+}
+
+monPostit.affichePostit()
+
 }
 
 
