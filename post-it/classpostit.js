@@ -50,6 +50,7 @@ class postIt {
             
             bougePost=!bougePost
             resizePost=false
+            modif=false
            
         })
 
@@ -124,6 +125,17 @@ class postIt {
     let maValue3 = document.createElement('i')
     maValue3.classList.add("fas")
     maValue3.classList.add("fa-edit")
+
+    monBoutonEdition.addEventListener('click',(event)=>{
+
+        modif=!modif
+        bougePost=false
+        event.stopPropagation()
+        //console.log(modif)
+
+
+
+    })
     
 
 

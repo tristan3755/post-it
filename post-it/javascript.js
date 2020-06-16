@@ -1,9 +1,14 @@
 let bougePost=false
 
 let resizePost=false
+
+let modif=false
+
+
+
 var xPos 
 var yPos
-let monPostit = new postIt (275,200,575,100,'yellow','black','Faire L\'exo',25,90,50,'Notes')
+let monPostit = new postIt (275,200,575,100,'yellow','black','A ne pas oublier!',25,90,50,'Notes')
 
 monPostit.affichePostit()
 
@@ -28,7 +33,7 @@ if(resizePost){
 
     monPostit.taillePostit((+monPostit.largdep)+(+xPos-monPostit.departX),(+monPostit.hautdep)+(+yPos-monPostit.departY))
     monPostit.affichePostit()
-    console.log('y:'+yPos+' x:'+xPos+' depX:'+monPostit.departX+' depY:'+monPostit.departY)
+    
 
 }
 
