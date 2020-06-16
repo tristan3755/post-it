@@ -4,6 +4,8 @@ let resizePost=false
 
 let modif=false
 
+let titre=false
+
 
 
 var xPos 
@@ -50,7 +52,7 @@ if(modif){
 
 if(event.key=='Backspace'){
     
-console.log(monPostit.contenu.substr(0,1))
+//console.log(monPostit.contenu.substr(0,1))
 
 monPostit.modifContenu(monPostit.contenu.substr(0,monPostit.contenu.length-1))
 
@@ -70,7 +72,35 @@ monPostit.affichePostit()
 
 })
 
+document.body.addEventListener('keydown',(event)=>{
 
+    modifTitre=event.key
+    
+    if(titre){
+       
+        //console.log(event.keyCode)
+    
+    if(event.key=='Backspace'){
+        
+    //console.log(monPostit.contenu.substr(0,1))
+    
+    monPostit.modifTitre(monPostit.titre.substr(0,monPostit.titre.length-1))
+    
+    
+    
+    }
+    
+    else{
+        monPostit.modifTitre(monPostit.titre + modifTitre)
+    }
+    
+    monPostit.affichePostit()
+    
+    }
+    
+    
+    
+    })
 
 
 

@@ -133,12 +133,29 @@ class postIt {
 
     })
     
+let monBoutonTitre=document.createElement('button')
+monBoutonTitre.className='bouton';
+let maValue4 = document.createElement('i')
+maValue4.classList.add("fas")
+maValue4.classList.add("fa-text-height")
+
+monBoutonTitre.addEventListener('click',(event)=>{
+
+    titre=!titre
+    bougePost=false
+    event.stopPropagation()
+    //console.log(titre)
+
+
+
+})
 
 
     monBoutonBouge.appendChild(maValue)
     monBoutonSupp.appendChild(maValue1)
     monBoutonRedimension.appendChild(maValue2)
     monBoutonEdition.appendChild(maValue3)
+    monBoutonTitre.appendChild(maValue4)
 
 
 
@@ -146,6 +163,7 @@ class postIt {
     divBoutton.appendChild(monBoutonSupp)
     divBoutton.appendChild(monBoutonRedimension)
     divBoutton.appendChild(monBoutonEdition)
+    divBoutton.appendChild(monBoutonTitre)
     
 
 
@@ -182,7 +200,11 @@ class postIt {
 
     }
 
-   
+    modifTitre(newTitre){
+
+        this.titre=newTitre
+
+    }
 
 
 }
