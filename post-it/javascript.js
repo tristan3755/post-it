@@ -48,7 +48,7 @@ modifText=event.key
 
 if(modif){
    
-    //console.log(event.keyCode)
+    console.log(event.key)
 
 if(event.key=='Backspace'){
     
@@ -59,6 +59,16 @@ monPostit.modifContenu(monPostit.contenu.substr(0,monPostit.contenu.length-1))
 
 
 }
+
+else if(event.key=='Enter'){
+    
+    //console.log(monPostit.contenu.substr(0,1))
+    
+    monPostit.modifContenu(monPostit.contenu("<br>"))
+    
+    
+    
+    }
 
 else{
     monPostit.modifContenu(monPostit.contenu + modifText)
