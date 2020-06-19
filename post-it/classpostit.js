@@ -96,6 +96,16 @@ class postIt {
         maValue1.classList.add("fas")
         maValue1.classList.add("fa-trash-alt")
 
+        monBoutonSupp.addEventListener('click', (event) => {
+
+           
+            document.getElementById('post' + this.id).remove()
+            event.stopPropagation()
+            suppPostit(this.id)
+
+        })
+
+
 
         let monBoutonRedimension = document.createElement('button')
         monBoutonRedimension.className = 'bouton';

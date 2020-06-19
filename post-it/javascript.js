@@ -8,65 +8,22 @@ let titre=false
 
 let creaJaune=false
 
+let supp=false
+
 let tabPostIt=[]
 
 let numPostit
-
-
-//[a-zA-Z0-9]
-// document.cookie = ‘user=Julien’
-
-
 
 var xPos 
 var yPos
 
 
-/*function setInterval(() => {
 
 
-    
-}, interval);*/
 
 
-/* code cours */
 
-document.querySelector(".cookies").addEventListener('click',(event)=>{
-
-    createCookie("test","bordel je ne comprends rien aux cookies",30)
-
-})
-
-
-window.addEventListener('load',(event)=>{
-
-console.log(readCookie("test")) 
-
-})
-
-
-function createCookie(name,value,days) {
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime()+(days*24*60*60*1000));
-        var expires = "; expires="+date.toGMTString();
-    }
-    else var expires = "";
-    document.cookie = name+"="+value+expires+"; path=/";
-}
-
-function readCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
-}
-
-/* code cours */
+/* code javascript principal*/
 
 document.querySelector(".buttonOption2").addEventListener('click',(event)=>{
     
@@ -120,7 +77,7 @@ document.querySelector(".buttonOption3").addEventListener('click',(event)=>{
     
     
     
-    let monPostit = new postIt (275,200,675,300,'darkblue','black','A ne pas oublier!',25,'Notes',tabPostIt.length+1)
+    let monPostit = new postIt (275,200,675,300,'lightblue','black','A ne pas oublier!',25,'Notes',tabPostIt.length+1)
     
     tabPostIt.push(monPostit)
     monPostit.affichePostit()
@@ -152,6 +109,14 @@ if(resizePost){
 
 
 })
+
+function suppPostit(id){
+
+    delete tabPostIt[id-1]
+}
+
+
+
 
 
 document.body.addEventListener('keydown',(event)=>{
@@ -226,9 +191,68 @@ document.body.addEventListener('keydown',(event)=>{
     
     })
 
+/* code javascript principal*/
+
+/* cookies*/
 
 
 
+
+
+
+setInterval(() => {
+   
+let tabJ=JSON.stringify(tabPostIt)
+createCookie("mesPostit",tabJ,30)
+
+
+}, 500);
+
+function createCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+
+
+let chaineCookie
+
+chaineCookie=readCookie("mesPostit") 
+let tabJ= JSON.parse(chaineCookie)
+
+
+for (let i  in tabJ ){
+
+
+tabPostIt.push (new postIt (tabJ[i].largeur,tabJ[i].hauteur,tabJ[i].x,tabJ[i].y,tabJ[i].couleurFond,tabJ[i].couleurTexte,tabJ[i].titre,tabJ[i].taille,tabJ[i].contenu,tabJ[i].id,tabJ[i].departX,tabJ[i].departY))
+
+
+tabPostIt[tabPostIt.length-1].affichePostit()
+
+
+}
+
+
+
+   
+
+    
 
 
 
