@@ -195,17 +195,10 @@ document.body.addEventListener('keydown',(event)=>{
 
 /* cookies*/
 
-
-
-
-
-
 setInterval(() => {
    
 let tabJ=JSON.stringify(tabPostIt)
 createCookie("mesPostit",tabJ,30)
-
-
 }, 500);
 
 function createCookie(name,value,days) {
@@ -229,23 +222,14 @@ function readCookie(name) {
     return null;
 }
 
-
-
 let chaineCookie
 
 chaineCookie=readCookie("mesPostit") 
 let tabJ= JSON.parse(chaineCookie)
 
-
 for (let i  in tabJ ){
-
-
 tabPostIt.push (new postIt (tabJ[i].largeur,tabJ[i].hauteur,tabJ[i].x,tabJ[i].y,tabJ[i].couleurFond,tabJ[i].couleurTexte,tabJ[i].titre,tabJ[i].taille,tabJ[i].contenu,tabJ[i].id,tabJ[i].departX,tabJ[i].departY))
-
-
 tabPostIt[tabPostIt.length-1].affichePostit()
-
-
 }
 
 
